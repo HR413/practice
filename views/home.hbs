@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Home</h1>
+
+    <!-- Form to upload a new profile image -->
+    <form action="/profile" method="post" enctype="multipart/form-data">
+        <input type="file" name="avatar" />
+        <input type="submit" value="Upload">
+    </form>
+
+    <!-- Display the uploaded profile images below the form -->
+    <div>
+        {{#each uploads}}
+            <img src="{{avatar.path}}" alt="">
+            <div>{{avatar.fileName}}</div>
+        {{/each}}
+    </div>
+</body>
+</html>
